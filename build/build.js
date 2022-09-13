@@ -19,11 +19,16 @@ fs.copyFileSync(srcPath + "/index.css", distDir + "/index.css");
 // copy web manifest
 fs.copyFileSync("./manifest.webmanifest", distDir + "/manifest.webmanifest");
 
-// build
+// build && watch (rebuild on file changes)
 const entry = path.join(srcPath, "index.js");
 build({
   entryPoints: [entry],
   bundle: true,
   loader: { ".svg": "dataurl" },
   outdir: distDir,
-}).catch(() => process.exit(1));
+  watch: true,
+})
+  .catch(() => process.exit(1))
+  .then((result) => {
+    console.log("watching...");
+  });

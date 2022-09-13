@@ -1,0 +1,22 @@
+{
+  "name": "template-web-project",
+  "version": "1.0.0",
+  "description": "A template for simple web projects using esbuild, ESLint and Prettier.",
+  "main": "index.html",
+  "repository": "https://github.com/PragmaticBeaver/template-web-project.git",
+  "author": "PragmaticBeaver",
+  "license": "Unlicense",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "build": "node ./build/build.js",
+    "dev": "lite-server"
+  },
+  "devDependencies": {
+    "esbuild": "^0.15.7",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "lite-server": "^2.6.1",
+    "prettier": "^2.7.1"
+  }
+}

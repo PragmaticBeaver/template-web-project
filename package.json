@@ -10,9 +10,10 @@
   "type": "module",
   "scripts": {
     "build": "node ./build/build.js",
-    "dev": "lite-server"
+    "dev": "concurrently --kill-others \"yarn run build\" \"lite-server\""
   },
   "devDependencies": {
+    "concurrently": "^7.4.0",
     "esbuild": "^0.15.7",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
